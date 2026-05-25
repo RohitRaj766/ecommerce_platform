@@ -1,105 +1,406 @@
-# Frontend Architecture Prototypes — Developer Guide
+# Architecture Lab — Frontend Engineering Prototypes
 
-Repository: ecommerce_platform
+Repository: `ecommerce_platform`
 
-Purpose
-This repository contains a small set of frontend architecture prototypes and reference patterns. It is intended as a developer-facing guide that demonstrates production-minded techniques for server-state management, caching, optimistic mutations, request cancellation, infinite queries, RBAC, and a lightweight dashboard builder.
+## Overview
 
-Goals
-- Provide a clear, discoverable implementation of a reusable data layer built on TanStack Query.
-- Demonstrate pragmatic production practices (cancellation, deduplication, retries, optimistic updates).
-- Offer a reproducible demo environment using deterministic mock data for local validation.
+Architecture Lab is a frontend engineering showcase project built with Next.js App Router that demonstrates scalable frontend architecture patterns through four integrated prototype domains:
 
-Quick start (local)
+- Enterprise RBAC System
+- Scalable Ecommerce Frontend Architecture
+- Reusable Frontend Data Platform
+- Configurable Dashboard Builder
 
-1. Install dependencies
+The project focuses on frontend systems thinking, reusable abstractions, modular architecture, and scalable state management rather than production-complete business features.
+
+The repository intentionally demonstrates architecture-first implementation patterns including:
+
+- Query abstraction
+- Cache lifecycle management
+- Optimistic updates
+- Request cancellation
+- Dynamic rendering
+- Widget isolation
+- Route protection
+- Shared provider architecture
+- Reusable hook systems
+- Centralized transport handling
+
+---
+
+# Assignment Mapping
+
+## 1. Enterprise RBAC System
+
+### Implemented Concepts
+- Dynamic role-based permissions
+- Route protection
+- Action-level permission checks
+- Field-level permission rendering
+- Permission inheritance structure
+- Permission providers and hooks
+- Dynamic UI adaptation
+
+### Key Architecture Areas
+- `src/modules/rbac`
+- `src/modules/rbac/provider`
+- `src/modules/rbac/hooks`
+- `src/modules/rbac/components`
+
+### Highlights
+- Centralized permission architecture
+- Permission-driven rendering
+- Reusable permission-gate components
+- Context-driven permission propagation
+- Memoized permission resolution
+
+---
+
+## 2. Ecommerce Frontend Architecture
+
+### Implemented Concepts
+- Product listing
+- Filters and search
+- Cart management
+- Wishlist flow
+- Checkout prototype
+- Recommendation sections
+- Modular ecommerce architecture
+
+### Key Architecture Areas
+- `src/modules/ecommerce`
+- `src/modules/ecommerce/components`
+- `src/modules/ecommerce/hooks`
+- `src/modules/ecommerce/services`
+
+### Highlights
+- Next.js App Router architecture
+- Modular component composition
+- Shared service abstraction
+- Client/server state separation
+- Reusable product querying hooks
+- Performance-oriented rendering
+
+---
+
+## 3. Reusable Frontend Data Platform
+
+### Implemented Concepts
+- Query abstraction
+- Centralized API transport
+- Cache lifecycle handling
+- Optimistic updates
+- Request cancellation
+- Retry handling
+- Deduplication
+- Infinite query support
+- Shared query hooks
+- Shared mutation hooks
+
+### Key Architecture Areas
+- `src/modules/data-layer`
+- `src/shared/hooks`
+- `src/shared/services`
+- `src/lib/query-client`
+- `src/providers`
+
+### Highlights
+- TanStack Query integration
+- Reusable query architecture
+- Shared mutation pipeline
+- Centralized error handling
+- Abort signal propagation
+- Reusable cache invalidation strategy
+
+---
+
+## 4. Configurable Dashboard Builder
+
+### Implemented Concepts
+- Widget registry
+- Dynamic rendering
+- Dashboard layouts
+- Layout persistence
+- Widget isolation
+- Dynamic imports
+- Dashboard composition
+
+### Key Architecture Areas
+- `src/modules/dashboard`
+- `src/modules/dashboard/widgets`
+- `src/modules/dashboard/registry`
+
+### Highlights
+- Modular widget system
+- Dynamic widget registration
+- Layout persistence strategy
+- Independently developed widget architecture
+- Extensible dashboard composition
+
+---
+
+# Technology Stack
+
+## Frontend
+- Next.js App Router
+- React
+- TypeScript
+- TailwindCSS
+
+## State Management
+- TanStack Query (Server State)
+- Redux Toolkit / Zustand style stores (Client State)
+
+## Tooling
+- ESLint
+- Modular Providers
+- Shared Hook Architecture
+
+---
+
+# Core Architecture Philosophy
+
+The project is designed around separation of concerns.
+
+```text
+UI Layer
+↓
+Reusable Hooks
+↓
+TanStack Query
+↓
+API Client
+↓
+Route Handlers / Services
+↓
+Database / Mock Layer
+```
+
+The goal is to keep:
+
+- UI components presentation-focused
+- Business logic reusable
+- Transport logic centralized
+- Query lifecycle standardized
+- Feature modules isolated
+
+---
+
+# Project Structure
+
+```text
+src/
+ ├── app/
+ │    ├── rbac/
+ │    ├── ecommerce/
+ │    ├── data-layer/
+ │    └── dashboard/
+ │
+ ├── modules/
+ │    ├── rbac/
+ │    ├── ecommerce/
+ │    ├── data-layer/
+ │    └── dashboard/
+ │
+ ├── shared/
+ │    ├── hooks/
+ │    ├── services/
+ │    ├── ui/
+ │    └── utils/
+ │
+ ├── lib/
+ │    └── query-client/
+ │
+ ├── providers/
+ │
+ └── mock/
+```
+
+---
+
+# Reusable Data Layer Architecture
+
+The reusable data platform is one of the primary architectural showcases of the project.
+
+## Core Features
+
+### Query Abstraction
+Reusable hooks standardize:
+- caching
+- retries
+- deduplication
+- error handling
+- cancellation
+- stale lifecycle
+
+### Mutation Abstraction
+Shared mutation hooks standardize:
+- optimistic updates
+- rollback handling
+- invalidation
+- success reconciliation
+
+### API Client
+Centralized transport layer handles:
+- request deduplication
+- cancellation
+- retry policies
+- simulated latency
+- consistent error normalization
+
+### Infinite Queries
+Cursor-style data loading demonstrations using reusable pagination logic.
+
+---
+
+# RBAC Architecture
+
+The RBAC implementation demonstrates scalable permission-driven UI rendering.
+
+## Architecture Flow
+
+```text
+User
+↓
+Role
+↓
+Permission Resolution
+↓
+Permission Provider
+↓
+Permission Hooks
+↓
+Conditional Rendering
+```
+
+## Key Features
+
+- Dynamic permissions
+- Role inheritance
+- Route-level protection
+- Action-level gating
+- Field-level rendering
+- Provider-based permission propagation
+
+---
+
+# Dashboard Architecture
+
+The dashboard system demonstrates modular widget-driven frontend composition.
+
+## Widget System
+
+Widgets are:
+- independently developed
+- dynamically registered
+- lazily rendered
+- layout-persisted
+
+## Dashboard Features
+
+- Widget registry
+- Dynamic rendering
+- Layout persistence
+- Modular composition
+- Extensible dashboard structure
+
+---
+
+# Ecommerce Architecture
+
+The ecommerce prototype demonstrates scalable frontend composition patterns.
+
+## Features
+- Product listing
+- Search and filtering
+- Cart flow
+- Wishlist flow
+- Checkout prototype
+- Recommendation sections
+
+## Performance Considerations
+
+- Lazy rendering
+- Dynamic imports
+- Query caching
+- Memoized rendering
+- Shared data hooks
+- Reusable product services
+
+## SEO & Rendering Strategy
+
+The architecture is designed around Next.js App Router patterns.
+
+SEO-critical pages can leverage:
+- Server Components
+- SSR strategies
+- Metadata APIs
+- Streaming rendering
+
+Interactive features remain client-driven where appropriate.
+
+---
+
+# Query Lifecycle Features
+
+The data platform demonstrates:
+
+- caching
+- retries
+- optimistic updates
+- request cancellation
+- deduplication
+- infinite queries
+- stale lifecycle handling
+- centralized invalidation
+
+These features are visually demonstrated inside the `/data-layer` module.
+
+---
+
+# Tradeoffs & Scope Decisions
+
+This project intentionally prioritizes:
+
+- scalable architecture
+- reusable abstractions
+- frontend systems thinking
+- modularity
+- explainability
+
+over exhaustive production feature depth.
+
+Given the intentionally broad assignment scope and limited timeline, representative implementations were prioritized over enterprise-complete implementations.
+
+The goal of the repository is to demonstrate engineering decision-making and scalable frontend architecture patterns.
+
+---
+
+# Local Development
+
+## Install dependencies
 
 ```bash
 npm install
 ```
 
-2. Start development server
+## Start development server
 
 ```bash
 npm run dev
-# open http://localhost:3000
 ```
 
-Build (production)
+Open:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# Build Production Version
 
 ```bash
 npm run build
 npm run start
 ```
-
-Recommended demo routes
-- `/data-layer` — architecture overview, query lifecycle visualizations, infinite query demo, optimistic mutation demo.
-- `/ecommerce` — product catalog, filters, product cards.
-- `/rbac` — role/permission sandbox and UI gating examples.
-- `/dashboard` — widget registry and builder.
-
-Project layout (high level)
-- `src/modules/data-layer` — the showcase page and demo components (flow diagram, lifecycle timeline, infinite-demo, mutation-demo).
-- `src/shared/hooks` — `useApiQuery`, `useApiMutation` wrappers and shared hook patterns.
-- `src/shared/services` — `api-client.js` central transport (dedupe, retries, abort signal support).
-- `src/lib/query-client` + `src/providers` — `createQueryClient()` factory and client-only `QueryProvider`.
-- `src/mock` — deterministic JSON seeds used by demos.
-
-Data-layer deep dive
-
-1) Query client and provider
-- `src/lib/query-client/query-client.js` exports a `createQueryClient()` factory. The app instantiates the client on the browser inside `src/providers/query-provider.js` to avoid server-side singletons during Next.js prerendering.
-
-Why this matters: QueryClient contains runtime defaults (e.g., retry policies, default stale times) and must be created in a client context when using Next.js App Router to prevent server-render/runtime mismatches.
-
-2) Centralized API transport
-- `src/shared/services/api-client.js` provides a small transport wrapper used by all services. It implements:
-	- Request deduplication: avoid duplicate concurrent calls for the same resource.
-	- Abort signal forwarding: hook into `fetch`/XHR to cancel requests when components unmount or queries become stale.
-	- Retry logic: configurable retry attempts with basic backoff.
-
-3) Reusable hooks
-- `useApiQuery` — thin wrapper around TanStack's `useQuery` that enforces common defaults (error formatting, dedupe, query key patterns).
-- `useApiMutation` — central mutation wrapper that standardizes `onMutate`, optimistic update patterns, rollback, and post-success invalidation.
-
-4) Infinite queries
-- The `infinite-demo` showcases `useInfiniteQuery` using `getNextPageParam` and local mock pagination. It demonstrates loading more pages, handling empty states, and coordinating UI with the cache.
-
-5) Optimistic mutations
-- The `mutation-demo` shows an optimistic add flow: mutate local cache immediately, perform network request, then either confirm (keep cache) or rollback on failure. The demo includes a toggle to simulate failures so you can observe rollback behavior.
-
-Coding conventions and patterns
-- Deterministic query keys: always use stable, serializable keys (arrays) to avoid cache collisions.
-- Prefer invalidation for coarse refreshes and direct cache edits for precise low-latency UX (optimistic updates).
-- Keep transport concerns (retries, signals) in `api-client` and business logic in services under `modules/*/services`.
-
-Tests & verification
-- The app uses deterministic mock data; manual smoke tests are the fastest way to validate changes:
-
-```bash
-npm run dev
-# visit /data-layer, /ecommerce, /rbac
-```
-
-Production notes
-- Observability: add tracing and request-level metrics (latency, retry counts, cache hit/miss).
-- Server push: consider WebSocket or SSE for low-latency invalidation rather than aggressive refetching.
-- Caching & CDNs: move idempotent read-heavy endpoints behind edge caches and use short cache-control with cache invalidation on write operations.
-- Reliability: classify errors for retry/backoff and add circuit-breakers for unstable upstreams.
-
-Files to inspect first (developer walkthrough)
-- `src/shared/services/api-client.js` — transport policies and abort handling
-- `src/lib/query-client/query-client.js` and `src/providers/query-provider.js` — how the QueryClient is created and provided
-- `src/shared/hooks/use-api-query.js` and `src/shared/hooks/use-api-mutation.js` — hook abstractions
-- `src/modules/data-layer/components` — demo implementations and UI primitives
-
-Contributing
-- Follow existing code style and small-file changes. Create focused PRs with a short description and a screenshot or steps to reproduce behavior.
-
-Maintainers
-- Primary author/maintainer: repository owner (see Git history for exact contact).
-
-License
-- No license file included; add a `LICENSE` if you intend to open-source this work.
-
-Thank you
