@@ -256,9 +256,6 @@ export function DashboardBuilder() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Configurable Dashboard Builder</p>
             <h1 className="mt-2 text-3xl font-semibold text-slate-950">Widgets registry + drag and resize + local persistence</h1>
-            <p className="mt-2 text-sm text-slate-600">
-              Admin can add, edit, and delete widgets. Manager inherits user access plus product edit and can share a dashboard link.
-            </p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Badge className="!bg-emerald-100 !text-emerald-700 ring-1 ring-inset ring-emerald-200">Role: {role}</Badge>
