@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sales",
+    "title": "Sales snapshot",
+    "x": 0,
+    "y": 0,
+    "w": 6,
+    "h": 4
+  },
+  {
+    "id": "orders",
+    "title": "Orders list",
+    "x": 6,
+    "y": 0,
+    "w": 6,
+    "h": 4
+  },
+  {
+    "id": "traffic",
+    "title": "Traffic trend",
+    "x": 0,
+    "y": 4,
+    "w": 12,
+    "h": 4
+  }
+]

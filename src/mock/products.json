@@ -1,0 +1,22 @@
+[
+  { "id": 1, "name": "Nimbus Chair", "category": "Furniture", "price": 149, "rating": 4.6, "featured": true },
+  { "id": 2, "name": "Pulse Lamp", "category": "Lighting", "price": 79, "rating": 4.4, "featured": false },
+  { "id": 3, "name": "Atlas Desk", "category": "Furniture", "price": 249, "rating": 4.8, "featured": true },
+  { "id": 4, "name": "Orbit Speaker", "category": "Audio", "price": 99, "rating": 4.2, "featured": false },
+  { "id": 5, "name": "Slate Bottle", "category": "Lifestyle", "price": 39, "rating": 4.1, "featured": false },
+  { "id": 6, "name": "Banana Chair", "category": "Lifestyle", "price": 69, "rating": 4.5, "featured": false },
+  { "id": 7, "name": "Comet Mobile X1", "category": "Mobile", "price": 699, "rating": 4.5, "featured": true },
+  { "id": 8, "name": "Comet Mobile X1 Screen Guard", "category": "Mobile Accessories", "price": 19, "rating": 4.3, "featured": false },
+  { "id": 9, "name": "Comet Mobile X1 Backcover", "category": "Mobile Accessories", "price": 24, "rating": 4.4, "featured": false },
+  { "id": 10, "name": "Aurora Laptop 14", "category": "Laptop", "price": 1199, "rating": 4.6, "featured": true },
+  { "id": 11, "name": "Aurora Laptop Stand", "category": "Laptop Accessories", "price": 39, "rating": 4.2, "featured": false },
+  { "id": 12, "name": "Aurora Wireless Keyboard", "category": "Laptop Accessories", "price": 59, "rating": 4.4, "featured": false },
+  { "id": 13, "name": "Aurora Wireless Mouse", "category": "Laptop Accessories", "price": 29, "rating": 4.3, "featured": false },
+  { "id": 14, "name": "Zephyr Headphones", "category": "Audio", "price": 129, "rating": 4.7, "featured": true },
+  { "id": 15, "name": "Pixelwatch Fitness", "category": "Wearables", "price": 199, "rating": 4.1, "featured": false },
+  { "id": 16, "name": "Glide Keyboard", "category": "Accessories", "price": 49, "rating": 4.0, "featured": false },
+  { "id": 17, "name": "Lumen Desk Lamp Pro", "category": "Lighting", "price": 119, "rating": 4.5, "featured": false },
+  { "id": 18, "name": "Orbit Mini Speaker", "category": "Audio", "price": 59, "rating": 4.0, "featured": false },
+  { "id": 19, "name": "Trail Backpack", "category": "Lifestyle", "price": 89, "rating": 4.2, "featured": false },
+  { "id": 20, "name": "Mobile Fast Charger", "category": "Mobile Accessories", "price": 29, "rating": 4.1, "featured": false }
+]

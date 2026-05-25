@@ -1,0 +1,35 @@
+{
+  "admin": [
+    "dashboard:view",
+    "dashboard:edit",
+    "dashboard:share",
+    "products:view",
+    "products:add",
+    "products:edit",
+    "products:delete",
+    "cart:manage",
+    "users:view",
+    "rbac:edit",
+    "checkout:purchase",
+    "checkout:coupon",
+    "checkout:simulate"
+  ],
+  "manager": [
+    "dashboard:view",
+    "dashboard:share",
+    "products:view",
+    "products:edit",
+    "cart:manage",
+    "checkout:purchase",
+    "checkout:coupon",
+    "checkout:simulate"
+  ],
+  "user": [
+    "dashboard:view",
+    "products:view",
+    "cart:manage",
+    "checkout:purchase",
+    "checkout:coupon",
+    "checkout:simulate"
+  ]
+}

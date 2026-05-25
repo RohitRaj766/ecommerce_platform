@@ -1,0 +1,6 @@
+{
+  "/rbac/page": "app/rbac/page.js",
+  "/ecommerce/page": "app/ecommerce/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/page": "app/page.js"
+}
